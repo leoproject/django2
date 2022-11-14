@@ -14,11 +14,12 @@ class ContactForm(forms.Form):
         subject = self.cleaned_data['subject']
         content = self.cleaned_data['content']
 
-        content_mail = f'Name:{name}\n E-mail {email}\n Subject {subject}\n Message:\n{content}'
+        content_mail = f'Name:{name}\nE-mail:{email}\nSubject:{subject}\nMessage:\n{content}'
         mail = EmailMessage(
             subject='Message that it sent by system',
             body=content_mail,
             from_email='leonardojs@protonmail.com',
+            to=['leonardojs@protonmail.com', ],
             headers={'Reply-To': email}
         )
 
