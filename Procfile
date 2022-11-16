@@ -1,0 +1,1 @@
+web: gunicorn djanjo2.wsgi --log-file -
